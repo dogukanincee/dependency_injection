@@ -3,8 +3,9 @@ package com.dogukanincee.reminder
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.dogukanincee.reminder.databinding.ItemReminderBinding
+import com.dogukanincee.reminder.databinding.AddReminderBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -15,7 +16,7 @@ class ReminderAdapter(private val listener: OnReminderClickListener) :
         fun onReminderClick(reminder: Reminder)
     }
 
-    class ReminderViewHolder(private val binding: ItemReminderBinding) :
+    class ReminderViewHolder(private val binding: AddReminderBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(reminder: Reminder, listener: OnReminderClickListener) {
@@ -41,7 +42,7 @@ class ReminderAdapter(private val listener: OnReminderClickListener) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReminderViewHolder {
         val binding =
-            ItemReminderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            AddReminderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ReminderViewHolder(binding)
     }
 

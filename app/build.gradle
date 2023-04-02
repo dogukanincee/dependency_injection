@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
 }
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 31
@@ -48,7 +49,7 @@ android {
 
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.10.0-alpha01'
+    implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
