@@ -38,7 +38,7 @@
             android:id="@+id/time_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:timeFormat="24"/>
+            android:format24Hour="true"/>
 
         <Button
             android:id="@+id/add_reminder_button"

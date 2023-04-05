@@ -1,6 +1,9 @@
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View" />
         <variable
             name="viewModel"
             type="com.dogukanincee.reminder.ReminderViewModel" />
@@ -13,49 +16,48 @@
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
+            android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:title="@string/app_name" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/reminder_list"
-            app:layoutManager="LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toolbar"
-            tools:listitem="@layout/item_reminder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:padding="16dp"
             android:scrollbarStyle="outsideOverlay"
             android:scrollbars="vertical"
-            android:visibility="@{viewModel.allReminders.size() > 0 ? View.VISIBLE : View.GONE}" />
+            android:visibility="@{viewModel.allReminders.size() > 0 ? View.VISIBLE : View.GONE}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            tools:listitem="@layout/add_reminder" />
 
         <TextView
             android:id="@+id/no_reminders_text_view"
-            tools:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/no_reminders_text"
+            android:text="No Reminders"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:visibility="@{viewModel.allReminders.size() == 0 ? View.VISIBLE : View.GONE}" />
+            android:visibility="@{viewModel.allReminders.size() == 0 ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/add_reminder_button"
-            android:tint="@color/white"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"
-            android:contentDescription="@string/add_reminder_content_description"
-            android:src="@drawable/ic_add" />
+            android:contentDescription="Add Reminder"
+            android:src="@drawable/ic_launcher_foreground"
+            android:tint="@color/white" />
 
     </LinearLayout>
-
 </layout>

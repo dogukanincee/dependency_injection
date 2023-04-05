@@ -26,8 +26,8 @@
 
         <activity
             android:name=".AddReminderActivity"
-            android:label="@string/add_reminder_title"
-            android:parentActivityName=".MainActivity"
+            android:label="Add Reminder Activity"
+            android:parentActivityName=".ReminderActivity"
             android:theme="@style/Theme.ReminderApp.Toolbar" />
 
     </application>
